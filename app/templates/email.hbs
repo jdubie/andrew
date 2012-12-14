@@ -1,0 +1,16 @@
+{{#if content}}
+  <h2>{{title}}</h2>
+  <p>
+    {{dateString}}
+    <a class="btn btn-small" {{action doClick target="view"}}>alert date</a>
+  </p>
+  <hr/>
+  {{! TODO: figure out why I need to check for `text` }}
+  {{#if text}}
+    <p>{{breakLines text}}</p>
+  {{/if}}
+  <a class="btn" {{action gotoEmails}}>&laquo; all emails</a>
+  <a class="btn btn-small btn-danger pull-right" {{action destroyItem content}}>x</a>
+{{else}}
+  <h2>Loading...</h2>
+{{/if}}
