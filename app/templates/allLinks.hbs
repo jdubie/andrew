@@ -1,6 +1,9 @@
-<h1>hey</h1>
 {{#each link in content}}
   <div>
-    <a> {{link.url}} </a>
+    {{#link.title}}
+    <a>{{link.title}}</a>
+    {{else}}
+    <a {{action previewLink link href=true}}>{{link._id}}</a>
+    {{/link.title}}
   </div>
 {{/each}}

@@ -10,6 +10,6 @@ App.store = DS.Store.create
     serializer: DS.JSONSerializer.extend
       primaryKey: (type) ->
         switch type
-          when App.LinkModel is '_id'
+          when App.LinkModel then '_id'
         
 module.exports = App
