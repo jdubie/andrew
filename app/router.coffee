@@ -26,22 +26,19 @@ App.Router = Em.Router.extend
         route: '/'
         previewLink: Ember.Route.transitionTo 'home.preview'
         connectOutlets: (router, context) ->
+          App.CurrentVideo = App.store.createRecord(App.LinkModel, {})
           globalLinks = App.store.findAll(App.LinkModel)
           router.get('applicationController')
             .connectOutlet 'global', 'allLinks', globalLinks
+          router.get('applicationController')
+            .connectOutlet('preview', 'oneLink', App.LaLa)
       preview: Em.Route.extend
         route: '/:id'
         previewLink: Ember.Route.transitionTo 'home.preview'
         connectOutlets: (router, event) ->
           console.log 'event.id', event.id
-          #link = App.store.find(App.LinkModel, event.id)
-          link = App.LinkModel.find event.id
-          console.log link
-          router.get('applicationController')
-            .connectOutlet('preview', 'oneLink', link)
-          globalLinks = App.store.findAll(App.LinkModel)
-          router.get('applicationController')
-            .connectOutlet 'global', 'allLinks', globalLinks
+          link = App.store.find(App.LinkModel, event.id)
+          App.CurrentVideo.set('domain_id', link.get('domain_id'))
 
             #index: Ember.Route.extend
             #  route: '/'
