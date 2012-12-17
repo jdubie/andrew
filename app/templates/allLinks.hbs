@@ -1,6 +1,13 @@
 {{#each controller}}
   <div>
-    <img {{bindAttr src="image_small"}}></img>
-    <a {{action previewLink this href=true}}>{{title}}</a>
+    <div class="row">
+      <div class="span2">
+        <img {{bindAttr src="image_small"}}></img>
+      </div>
+      <div class="span4">
+        <a {{action previewLink this href=true}}>{{title}}</a>
+        <p>{{description}}</p>
+      </div>
+    </div>
   </div>
 {{/each}}
