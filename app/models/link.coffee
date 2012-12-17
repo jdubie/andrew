@@ -1,11 +1,20 @@
 App.LinkModel = DS.Model.extend
   _id         : DS.attr 'string'
-  title       : DS.attr 'string'
+
   date        : DS.attr 'date'
-  description : DS.attr 'string'
   url         : DS.attr 'string'
   domain_id   : DS.attr 'string'
   type        : DS.attr 'string'
+
+  # youtube
+  title             : DS.attr 'string'
+  description       : DS.attr 'string'
+  image_small       : DS.attr 'string'  #  90 x 120
+  image_medium      : DS.attr 'string'  # 180 x 320
+  image_large       : DS.attr 'string'  # 360 x 480
+  domain_dislikes   : DS.attr 'number'
+  domain_likes      : DS.attr 'number'
+  domain_view_count : DS.attr 'number'
                 
   #didLoad  : -> console.log "didLoad email:"  , @get('url')
   #didUpdate: -> console.log "didUpdate email:", @get('title')

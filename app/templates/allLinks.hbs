@@ -1,9 +1,6 @@
-{{#each link in content}}
+{{#each controller}}
   <div>
-    {{#link.title}}
-    <a>{{link.title}}</a>
-    {{else}}
-    <a {{action previewLink link href=true}}>{{link._id}}</a>
-    {{/link.title}}
+    <img {{bindAttr src="image_small"}}></img>
+    <a {{action previewLink this href=true}}>{{title}}</a>
   </div>
 {{/each}}
