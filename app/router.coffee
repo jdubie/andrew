@@ -2,7 +2,10 @@ App = require 'app'
 debug = require('debug') 'DEBUG router'
 
 App.Router = Em.Router.extend
+  rootUrl: '/'
   enableLogging: true
+  location: 'history'
+
   root: Em.Route.extend
     home: Em.Route.extend
       route: '/'
