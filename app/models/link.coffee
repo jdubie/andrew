@@ -21,8 +21,8 @@ App.LinkModel = DS.Model.extend
   #didCreate: -> console.log "didCreate email:", @get('title')
 
   videoUrl: (() ->
-      # TODO switch on type
-      "http://www.youtube.com/embed/#{@get('domain_id')}?autoplay=1&origin=http://m.com:3005/"
+    # TODO switch on type
+    "http://www.youtube.com/embed/#{@get('domain_id')}?autoplay=1&origin=http://m.com:3005/"
   ).property('domain_id', 'type')
 
 .reopenClass
