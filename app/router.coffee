@@ -17,7 +17,8 @@ App.Router = Em.Router.extend
         previewLink: Ember.Route.transitionTo 'home.preview'
         connectOutlets: (router, context) ->
           link = App.store.find(App.LinkModel, context.id)
-          App.CurrentVideo.set('domain_id', link.get('domain_id'))
+          #App.CurrentVideo.set('domain_id', link.get('domain_id'))
+          App.CurrentVideo.set('content', link)
         deserialize: (router, context) ->
           App.store.find(App.LinkModel, context.id)
         serialize:  (router, context) ->
