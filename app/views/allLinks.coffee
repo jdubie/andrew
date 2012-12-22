@@ -1,5 +1,5 @@
-App = require 'app'
+#App = require 'app'
 
-App.AllLinksView = Em.View.extend
-  #didInsertElement: -> @$().hide().fadeIn('slow')
-  templateName: require 'templates/allLinks'
+#App.AllLinksView = Em.View.extend
+#  #didInsertElement: -> @$().hide().fadeIn('slow')
+#  templateName: require 'templates/allLinks'
