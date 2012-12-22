@@ -1,24 +1,18 @@
 App = require 'app'
 debug = require('debug') 'DEBUG router'
 
-App.Router = Em.Router.extend
-  rootUrl: '/'
-  enableLogging: true
-  location: 'history'
+#App.Route = Em.Router.extend
+#  rootUrl: '/'
+#  enableLogging: true
+#  location: 'history'
 
-  root: Em.Route.extend
-    home: Em.Route.extend
-      route: '/'
-      index: Em.Route.extend
-        route: '/'
-        previewLink: Ember.Route.transitionTo 'home.preview'
-      preview: Em.Route.extend
-        route: '/:id'
-        previewLink: Ember.Route.transitionTo 'home.preview'
-        connectOutlets: (router, context) ->
-          link = App.store.find(App.LinkModel, context.id)
-          App.CurrentVideo.set('domain_id', link.get('domain_id'))
-        deserialize: (router, context) ->
-          App.store.find(App.LinkModel, context.id)
-        serialize:  (router, context) ->
-          id: context.id
+App.Router.map (match) ->
+  match('/').to('home')
+  match('/signup').to('signup')
+  #match('/:feed_id').to('/feed')
+  #match('/:feed_id/:post_id').to('/feed')
+
+App.ApplicationView = Em.View.extend
+  templateName: require('templates/application')
+
+App.SignupRoute = Em.Route.extend({})

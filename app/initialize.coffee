@@ -1,21 +1,20 @@
-
 window.App = require 'app'
 
-require 'templates'
-require 'models'
+#require 'templates'
+#require 'models'
 require 'controllers'
 require 'views'
 require 'router'
-require 'helpers'
+#require 'helpers'
 
-App.initialize()
+#App.initialize()
 
 # init global list
-globalLinks = App.store.findAll(App.LinkModel)
-App.router.get('applicationController')
-  .connectOutlet 'global', 'allLinks', globalLinks
+#globalLinks = App.store.findAll(App.LinkModel)
+#App.router.get('applicationController')
+#  .connectOutlet 'global', 'allLinks', globalLinks
 
 # init current video
-App.CurrentVideo = App.store.createRecord(App.LinkModel, {})
-App.router.get('applicationController')
-  .connectOutlet('preview', 'oneLink', App.CurrentVideo)
+#App.CurrentVideo = App.store.createRecord(App.LinkModel, {})
+#App.router.get('applicationController')
+#  .connectOutlet('preview', 'oneLink', App.CurrentVideo)
