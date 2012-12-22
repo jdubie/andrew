@@ -15,4 +15,7 @@ App.Router.map (match) ->
 App.ApplicationView = Em.View.extend
   templateName: require('templates/application')
 
-App.SignupRoute = Em.Route.extend({})
+App.SignupRoute = Em.Route.extend
+  route: '/signup'
+App.HomeRoute = Em.Route.extend
+  route: '/'
