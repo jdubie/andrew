@@ -1,4 +1,4 @@
-App.LinkModel = DS.Model.extend
+App.Link = DS.Model.extend
   _id         : DS.attr 'string'
 
   date        : DS.attr 'date'
@@ -16,14 +16,13 @@ App.LinkModel = DS.Model.extend
   domain_likes      : DS.attr 'number'
   domain_view_count : DS.attr 'number'
                 
-  #didLoad  : -> console.log "didLoad email:"  , @get('url')
-  #didUpdate: -> console.log "didUpdate email:", @get('title')
-  #didCreate: -> console.log "didCreate email:", @get('title')
+  didLoad  : -> console.log "didLoad link:"  , @get('url')
+  didUpdate: -> console.log "didUpdate link:", @get('title')
+  didCreate: -> console.log "didCreate link:", @get('title')
 
   videoUrl: (() ->
     # TODO switch on type
     "http://www.youtube.com/embed/#{@get('domain_id')}?autoplay=1&origin=http://m.com:3005/"
   ).property('domain_id', 'type')
 
-.reopenClass
-  url: 'link'
+  #App.LinkModel.reopenClass url: 'link'

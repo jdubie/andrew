@@ -9,4 +9,5 @@
 #require 'views/createEmail'
 
 require 'views/signup'
+require 'views/home'
 require 'views/navbar'

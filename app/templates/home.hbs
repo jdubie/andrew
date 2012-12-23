@@ -1,1 +1,8 @@
-<h2>Welcome to a listing of Fred's musings</h2>
+<h2>hey</h2>
+{{#each post in posts}}
+  <div class="special">
+    {{!#linkTo 'link' link.post}}
+    <h5>{{post.link.domain_id}}</h5>
+    {{!/linkTo}}
+  </div>
+{{/each}}
