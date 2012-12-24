@@ -19,10 +19,9 @@ App.SignupRoute = Em.Route.extend
   route: '/signup'
 
 App.HomeRoute = Em.Route.extend
-  route: '/'
   setupControllers: (controller) ->
     controller.set('posts', App.store.findAll(App.Post))
 
 App.HomeController = Em.Controller.extend
-  #posts: [{link: 'hye'},{link: 'wef'}]
+  link: null
   posts: null

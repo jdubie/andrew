@@ -1,8 +1,10 @@
-<h2>hey</h2>
 {{#each post in posts}}
   <div class="special">
     {{!#linkTo 'link' link.post}}
-    <h5>{{post.link.domain_id}}</h5>
+    <a {{action testFoo post.link target="parentView"}}>hey</a>
     {{!/linkTo}}
   </div>
 {{/each}}
+
+<h1>{{link.title}}</h1>
+<iframe width="560" height="315" {{bindAttr src="link.videoUrl"}} frameborder="0" allowfullscreen></iframe>
