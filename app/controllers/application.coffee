@@ -1,3 +1,2 @@
-App = require 'app'
-
-App.ApplicationController = Em.Controller.extend {}
+App.ApplicationController = Em.Controller.extend
+  currentUser: null

@@ -18,10 +18,15 @@ App.ApplicationView = Em.View.extend
 App.SignupRoute = Em.Route.extend
   route: '/signup'
 
+App.CurrentUser = Em.Object.create
+  username: null
+
 App.HomeRoute = Em.Route.extend
   setupControllers: (controller) ->
     controller.set('posts', App.store.findAll(App.Post))
 
-App.HomeController = Em.Controller.extend
-  link: null
-  posts: null
+    # check if logged in
+    $.getJSON('/session').statusCode
+      200: (user) ->
+        App.CurrentUser.set 'username', user.username
+      403: -> console.log '403'

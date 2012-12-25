@@ -7,6 +7,7 @@ require 'views'
 require 'router'
 #require 'helpers'
 
+
 #App.initialize()
 
 # init global list
@@ -14,8 +15,8 @@ require 'router'
 #App.router.get('applicationController')
 #  .connectOutlet 'global', 'allLinks', globalLinks
 
-App.CurrentVideoController = Em.ObjectController.extend
-  content: null
+#App.CurrentVideoController = Em.ObjectController.extend
+#  content: null
 
 # init current video
 #App.CurrentVideo = App.store.createRecord(App.LinkModel, {})

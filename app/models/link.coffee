@@ -25,4 +25,9 @@ App.Link = DS.Model.extend
     "http://www.youtube.com/embed/#{@get('domain_id')}?autoplay=1&origin=http://m.com:3005/"
   ).property('domain_id', 'type')
 
+  brief: (() ->
+    truncate = (str, n) -> str.substring(0, n) + '...'
+    truncate(@get('description'), 150)
+  ).property('description')
+
   #App.LinkModel.reopenClass url: 'link'
