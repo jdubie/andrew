@@ -1,3 +1,5 @@
 App = require 'app'
 
-App.HomeController = Em.Controller.extend {}
+App.HomeController = Em.Controller.extend
+  link: null
+  posts: null

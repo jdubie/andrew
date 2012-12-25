@@ -12,4 +12,6 @@ App.store = DS.Store.create
 App.Adapter = DS.FixtureAdapter.extend()
 App.store.adapter.serializer.map 'App.Post', link: embedded: 'load'
 
+# check user session
+
 module.exports = App

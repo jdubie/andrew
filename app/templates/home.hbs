@@ -1,8 +1,22 @@
-<h2>hey</h2>
-{{#each post in posts}}
-  <div class="special">
-    {{!#linkTo 'link' link.post}}
-    <h5>{{post.link.domain_id}}</h5>
-    {{!/linkTo}}
+<div class="row">
+  <div class="span6">
+    {{#each post in posts}}
+    <div class="row">
+      <div class="span2">
+        <img {{bindAttr src="post.link.image_small"}}></img>
+      </div>
+      <div class="span3">
+        <div class="special">
+          <a href="#" {{action testFoo post.link target="parentView"}}>
+            {{post.link.title}}
+          </a>
+          <p>{{post.link.brief}}</p>
+        </div>
+      </div>
+    </div>
+    {{/each}}
   </div>
-{{/each}}
+  <div class="span6">
+    <h3>{{link.title}}</h3>
+    <iframe width="560" height="315" {{bindAttr src="link.videoUrl"}} frameborder="0" allowfullscreen></iframe>
+  </div>
