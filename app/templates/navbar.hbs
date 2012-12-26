@@ -3,19 +3,14 @@
     <div class="container">
       <a class="brand" href="#/">LinkLib</a>
       <div class="pull-right">
-        {{#if App.CurrentUser.username}}
-          <ul class="nav">
-            <li>
-              <a href="javascript:var script = document.createElement('script');var url = window.location.href;script.src = 'http://m.com:3005/bookmarklet/app.js';document.head.appendChild(script);">Drag this into your bookmark bar -></a>
-            </li>
-          </ul>
-          <a class="btn btn-primary" href="javascript:var script = document.createElement('script');var url = window.location.href;script.src = 'http://m.com:3005/bookmarklet/app.js';document.head.appendChild(script);">Capture</a>
-        {{else}}
         <ul class="nav">
-          <li><a href="#/login">login</a></li>
+          <li>
+          <a {{bindAttr href="App.Bookmarklet.href"}}>
+            Drag this into your bookmark bar
+          </a>
+          </li>
         </ul>
-          <a class="btn btn-primary" href="#/signup">signup</a>
-        {{/if}}
+        <a class="btn btn-primary" {{bindAttr href="App.Bookmarklet.href"}}>Capture</a>
       </div>
     </div>
   </div>

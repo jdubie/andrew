@@ -1,10 +1,9 @@
-App.SignupController = Em.Controller.extend
+App.LoginController = Em.Controller.extend
   username: null
   password: null
   submit: ->
     # TODO would like to do with this.get('username')
-    controller = App.SignupController
-
+    controller = App.LoginController
     opts =
       url: '/users'
       type: 'post'

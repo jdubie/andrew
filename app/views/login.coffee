@@ -1,7 +1,7 @@
-App.SignupView = Em.View.extend
-  templateName: require('templates/signup')
+App.LoginView = Em.View.extend
+  templateName: require('templates/login')
 
-App.SignupForm = Em.View.extend
+App.LoginForm = Em.View.extend
   tagName: 'form'
   submit: (e) ->
     e.preventDefault()

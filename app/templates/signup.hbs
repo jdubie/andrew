@@ -1,10 +1,6 @@
 <h1>Signup</h1>
 {{#view App.SignupForm}}
-  {{!view App.SignupUsernameTextField}}
-  {{view Ember.TextField valueBinding="App.SignupController.username"}}
-
-  {{view App.SignupPasswordTextField}}
-  {{!view App.SignupSubmitButton}}
-  {{App.SignupController.username}}
+  {{view Ember.TextField placeholder="username" valueBinding="App.SignupController.username"}}
+  {{view Ember.TextField placeholder="password" type="password" valueBinding="App.SignupController.password"}}
   <input type="submit" class="btn">
 {{/view}}
