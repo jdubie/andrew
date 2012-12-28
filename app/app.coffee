@@ -9,7 +9,6 @@ App.store = DS.Store.create
       primaryKey: (type) -> '_id'
 
 # https://github.com/emberjs/data/issues/504
-App.Adapter = DS.FixtureAdapter.extend()
 App.store.adapter.serializer.map 'App.Post', link: embedded: 'load'
 
 module.exports = App
