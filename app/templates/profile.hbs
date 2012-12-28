@@ -1,0 +1,14 @@
+<h1>Edit your <strong>username</strong></h1>
+<h3>Username: {{username}}</h3>
+<form class="form-inline">
+  <div {{bindAttr class="usernameClass"}}>
+  <div class="controls">
+    {{view Ember.TextField placeholder="username" valueBinding="username"}}
+    {{#linkTo home class='btn btn-primary'}}Done{{/linkTo}}
+  </div>
+  {{#if validUsername}}
+    <label class="control-label" for="username">{{error}}</label>
+  {{else}}
+    <label class="control-label" for="username">Invalid username</label>
+  {{/if}}
+</form>

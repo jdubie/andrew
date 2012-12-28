@@ -1,20 +1,21 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <a class="brand" href="#/">LinkLib</a>
+      {{#linkTo 'home' class='brand'}}LinkLib{{/linkTo}}
       <div class="pull-right">
-        {{#if App.CurrentUser.username}}
+        {{#if App.CurrentUser.loggedIn}}
+         <ul class="nav">
+           <li>{{#linkTo profile App.CurrentUser}}Welcome, {{App.CurrentUser.username}}{{/linkTo}}</li>
+         </ul>
+        {{else}}
           <ul class="nav">
             <li>
-              <a href="javascript:var script = document.createElement('script');var url = window.location.href;script.src = 'http://m.com:3005/bookmarklet/app.js';document.head.appendChild(script);">Drag this into your bookmark bar -></a>
+            <a {{bindAttr href="App.Bookmarklet.href"}}>
+              Drag button into your bookmark bar to get started
+            </a>
             </li>
           </ul>
-          <a class="btn btn-primary" href="javascript:var script = document.createElement('script');var url = window.location.href;script.src = 'http://m.com:3005/bookmarklet/app.js';document.head.appendChild(script);">Capture</a>
-        {{else}}
-        <ul class="nav">
-          <li><a href="#/login">login</a></li>
-        </ul>
-          <a class="btn btn-primary" href="#/signup">signup</a>
+          <a class="btn btn-primary" {{bindAttr href="App.Bookmarklet.href"}}>Capture</a>
         {{/if}}
       </div>
     </div>

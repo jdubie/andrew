@@ -1,0 +1,6 @@
+<h1>Login</h1>
+{{#view App.LoginForm}}
+  {{view Ember.TextField placeholder="username" valueBinding="App.LoginController.username"}}
+  {{view Ember.TextField placeholder="password" type="password" valueBinding="App.LoginController.password"}}
+  <input type="submit" class="btn">
+{{/view}}

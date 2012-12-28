@@ -8,4 +8,5 @@
 
 require 'controllers/application'
 require 'controllers/signup'
+require 'controllers/login'
 require 'controllers/navbar'
