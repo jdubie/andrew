@@ -1,14 +1,19 @@
-# load all your views here
+#################################################
+## VIEWS
+#################################################
 
-#require 'views/application'
-#require 'views/allLinks'
-#require 'views/oneLink'
-#require 'views/home'
-#require 'views/email'
-#require 'views/emails'
-#require 'views/createEmail'
+App.ApplicationView = Em.View.extend
+  didInsertElement: -> @$().hide().fadeIn('slow')
+  templateName: require 'templates/application'
 
-require 'views/signup'
-require 'views/login'
-require 'views/home'
-require 'views/navbar'
+App.HomeView = Em.View.extend
+  didInsertElement: -> @$().hide().fadeIn('slow')
+  templateName: require 'templates/home'
+  testFoo: (a,b) ->
+    this.get('controller').set('link', a.context)
+
+App.ProfileView = Em.View.extend
+  templateName: require('templates/profile')
+
+App.NavbarView = Em.View.extend
+  templateName: require 'templates/navbar'
