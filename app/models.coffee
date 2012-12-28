@@ -1,4 +1,6 @@
-# load all your models here
+#################################################
+## MODELS
+#################################################
 
 require 'models/link'
 require 'models/post'

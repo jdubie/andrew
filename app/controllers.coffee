@@ -1,12 +1,10 @@
-# load all your controllers here
+#################################################
+## CONTROLLERS
+#################################################
 
-#require 'controllers/allLinks'
-#require 'controllers/oneLink'
-#require 'controllers/home'
-#require 'controllers/email'
-#require 'controllers/emails'
+App.ApplicationController = Em.Controller.extend
+  currentUser: null
 
-require 'controllers/application'
-require 'controllers/signup'
-require 'controllers/login'
-require 'controllers/navbar'
+App.ProfileController = Em.ObjectController.extend
+  content: null
+

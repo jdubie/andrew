@@ -9,11 +9,6 @@ debug = require('debug') 'DEBUG router'
 App.Router.map (match) ->
   match('/').to('home')
   match('/profile').to('profile')
-  #match('/:feed_id').to('/feed')
-  #match('/:feed_id/:post_id').to('/feed')
-
-App.ApplicationView = Em.View.extend
-  templateName: require('templates/application')
 
 App.CurrentUser = Em.ObjectController.create {}
 
@@ -40,12 +35,6 @@ App.Bookmarklet = App.BookmarkletObject.create
 App.HomeRoute = Em.Route.extend
   setupControllers: (controller) ->
     controller.set('posts', App.store.findAll(App.Post))
-
-App.ProfileView = Em.View.extend
-  templateName: require('templates/profile')
-
-App.ProfileController = Em.ObjectController.extend
-  content: null
 
 App.ProfileRoute = Em.Route.extend
   setupControllers: (controller) ->
