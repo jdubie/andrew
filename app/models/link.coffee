@@ -26,7 +26,10 @@ App.Link = DS.Model.extend
   ).property('domain_id', 'type')
 
   brief: (() ->
-    truncate = (str, n) -> str.substring(0, n) + '...'
+    truncate = (str, n) ->
+      return '' unless str
+      return str if str.length <= n
+      str.substring(0, n) + '...'
     truncate(@get('description'), 150)
   ).property('description')
 
