@@ -18,6 +18,9 @@
     {{/each}}
   </div>
   <div class="span6">
-    <h3>{{link.title}}</h3>
-    <iframe width="560" height="315" {{bindAttr src="link.videoUrl"}} frameborder="0" allowfullscreen></iframe>
+    <div class="affix">
+      <h3>{{link.title}}</h3>
+      <iframe width="560" height="315" {{bindAttr src="link.videoUrl"}} frameborder="0" allowfullscreen>
+      </iframe>
+    </div>
   </div>
