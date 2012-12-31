@@ -9,6 +9,6 @@ App.store = DS.Store.create
       primaryKey: (type) -> '_id'
 
 # https://github.com/emberjs/data/issues/504
-App.store.adapter.serializer.map 'App.Post', link: embedded: 'load'
+App.store.adapter.serializer.map 'App.Post', user: {embedded: 'load'}, link: {embedded: 'load'}
 
 module.exports = App
